@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th>Titolo</th>
+            <th>Autore</th>
+            <th>Casa Editrice</th>
+            <th>Genere</th>
+            <th>Prezzo</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books"[ngClass]="{'evidenza': book.prezzo>50}">
+            <td>{{book.titolo}}</td>
+            <td>{{book.autore}}</td>
+            <td>{{book.casaEditrice}}</td>
+            <td>{{book.genere}}</td>
+            <td>{{book.prezzo}}</td>
+            <td>
+                <button (click)="deleteBook(book)">Elimina</button>
+            </td>
+        </tr>
+        <tr *ngIf="books.length == 0">
+            <td colspan="6" style="text-align: center;">Non ci sono libri</td>
+        </tr>
+    </tbody>
+</table>

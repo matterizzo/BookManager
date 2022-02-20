@@ -1,0 +1,29 @@
+<form #mioForm="ngForm" (ngSubmit)="submitform()">
+    <div class="mb-3">
+      <label for="titolo" class="form-label">Titolo</label>
+      <input type="text" class="form-control" id="titolo" ngModel name="titolo">      
+    </div>
+    <div class="mb-3">
+      <label for="autore" class="form-label">Autore</label>
+      <input type="text" class="form-control" id="autore"ngModel name="autore">      
+    </div>
+    <div class="mb-3">
+      <label for="casaEd" class="form-label">Casa Editrice</label>
+      <input type="text" class="form-control" id="casaEd"ngModel name="casaEditrice">      
+    </div>
+    <div class="mb-3">
+      <label for="genere" class="form-label">Genere</label>
+      <select name="genere" id="genere"ngModel name="genere">
+          <option [value]="type" *ngFor="let type of generi">
+              {{type}}
+          </option>
+      </select>
+    </div>
+    <div class="mb-3">
+        <label for="prezzo" class="form-label">Prezzo</label>
+        <input type="number" class="form-control" id="prezzo"ngModel name="prezzo">      
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Aggiungi</button>
+  </form>
